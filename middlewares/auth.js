@@ -24,10 +24,9 @@ passport.use(new LocalStrategy({
       }
 
       return done(null, user, { message: 'Successfully Logged In!' });
-    }).catch(e => {
-      console.log(e);
-  });
-  }));
+    });
+  })
+);
 
 passport.serializeUser((user, done) => {
   done(null, user.id);
